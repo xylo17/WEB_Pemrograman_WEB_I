@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectLite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="#home">Home</a>
+        <a href="#week">Minggu Ini</a>
+        <a href="#meeting">Info Meeting</a>
+        <a href="#tasks">Daftar Tugas</a>
+        <a href="#contact">Kontak Tim</a>
+        <a href="#general">Info Umum</a>
+    </div>
+
+    <button id="menuBtn" class="menu-btn">☰</button>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>ProjectLite</h1>
+        <p>Kelola proyekmu dengan lebih mudah & terstruktur.</p>
+        <button onclick="scrollToSection('week')" class="go-btn">Mulai</button>
+        <div id="currentTime" class="time-box"></div>
+    </section>
+
+    <!-- Info Minggu Ini -->
+    <section id="week" class="section">
+        <h2>Timeline Minggu Ini</h2>
+        <button class="edit-btn" onclick="openTimelineForm()">+ Tambah Kegiatan</button>
+        <table id="weekTable" class="info-table"></table>
+    </section>
+
+    <!-- Form Popup -->
+    <div id="timelineForm" class="popup">
+        <div class="popup-content">
+            <h3>Tambah Kegiatan</h3>
+
+            <label>Kegiatan:</label>
+            <input type="text" id="inputKegiatan">
+
+            <label>Tanggal:</label>
+            <input type="date" id="inputTanggal">
+
+            <label>Waktu:</label>
+            <input type="text" id="inputWaktu">
+
+            <button onclick="saveTimeline()" class="save-btn">Simpan</button>
+            <button onclick="closeTimelineForm()" class="cancel-btn">Batal</button>
+        </div>
+    </div>
+
+
+
+    <!-- Info Meeting -->
+    <section id="meeting" class="section">
+        <h2>Info Meeting</h2>
+        <div id="meetingList" class="card-container"></div>
+    </section>
+
+    <!-- Tugas -->
+    <section id="tasks" class="section">
+        <h2>Daftar Tugas</h2>
+        <div id="taskList" class="card-container"></div>
+    </section>
+
+    <!-- Kontak Tim -->
+    <section id="contact" class="section">
+        <h2>Kontak Tim</h2>
+        <div id="contactList" class="card-container"></div>
+    </section>
+
+    <!-- Info Umum -->
+    <section id="general" class="section">
+        <h2>Info Umum Lainnya</h2>
+        <div id="generalList" class="card-container"></div>
+    </section>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
